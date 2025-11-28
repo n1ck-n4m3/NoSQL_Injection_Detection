@@ -1,0 +1,7 @@
+# NoSQL Injection Dataset Generator
+# Python 3.8+
+
+faker==24.4.0        # Generate random data
+pandas==2.1.4        # Data processing and export
+tqdm==4.66.1         # Progress bar display
+
