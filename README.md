@@ -268,6 +268,105 @@ python nosql_dataset_generator.py --output my_custom_dataset
 python nosql_dataset_generator.py --seed 12345
 ```
 
+## LLM Evaluation
+
+This dataset can be used to evaluate Large Language Models' ability to detect NoSQL injection attacks.
+
+### Models for Evaluation
+
+| Model | Collaborator | Description |
+|-------|--------------|-------------|
+| **qwen2.5:7b** | @n1ck-n4m3 | Best overall (Chinese/English) |
+| llama3.1:8b | - | Meta's baseline model |
+| starling-lm:7b | - | High-quality chat model |
+| mistral:7b | - | Fast and efficient |
+
+---
+
+### Qwen 2.5 7B Evaluation (by @n1ck-n4m3)
+
+#### Prerequisites
+
+**1. Install Ollama**
+
+```bash
+# macOS
+brew install ollama
+
+# Linux
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Windows
+# Download from https://ollama.com/download/windows
+```
+
+**2. Start Ollama Service**
+
+```bash
+ollama serve
+```
+
+**3. Download Qwen 2.5 Model**
+
+```bash
+ollama pull qwen2.5:7b
+
+# Verify installation
+ollama list
+```
+
+#### Model Specifications
+
+| Spec | Value |
+|------|-------|
+| Parameters | 7B |
+| Size | 4.7 GB |
+| RAM Required | ~6 GB |
+| Speed (M3 Pro) | ~30 tok/s |
+
+#### Evaluation Prompt
+
+Based on `evaluation.md`, use the following prompt template:
+
+```
+Below is a payload that may be benign or malicious. 
+Your goal is to analyze it in a step by step manner, if the payload is indeed benign or malicious.
+Classify the following payload as malicious (1) or benign (0).
+
+payload = {full_command}
+
+Provide your reasoning and then give the final result as just 0 or 1.
+```
+
+#### Python API Usage
+
+```bash
+pip install ollama tqdm
+```
+
+```python
+import ollama
+
+def classify_payload(full_command, model="qwen2.5:7b"):
+    prompt = f"""Below is a payload that may be benign or malicious.
+Classify the following payload as malicious (1) or benign (0).
+
+payload = {full_command}
+
+Result:"""
+    
+    response = ollama.chat(model=model, messages=[
+        {'role': 'user', 'content': prompt}
+    ])
+    return response['message']['content']
+
+# Example
+result = classify_payload('db.users.find({"$where": "sleep(5000)"})')
+print(result)  # Expected: 1 (malicious)
+```
+
+---
+
 ## Important Notes
 
 ### Security Considerations
