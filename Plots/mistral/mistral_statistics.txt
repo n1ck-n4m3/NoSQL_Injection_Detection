@@ -1,0 +1,206 @@
+======================================================================
+MISTRAL MODEL - PERFORMANCE STATISTICS
+======================================================================
+
+OVERALL METRICS
+----------------------------------------------------------------------
+Total Entries:        10000
+Valid Predictions:    9799
+Missing Predictions:  201
+
+Accuracy:             0.7270 (72.70%)
+Precision:            0.9602 (96.02%)
+Recall (TPR):         0.4810 (48.10%)
+F1 Score:             0.6409
+
+True Positive Rate:   0.4810 (48.10%)
+False Positive Rate:  0.0205 (2.05%)
+False Negative Rate:  0.5190 (51.90%)
+
+TP: 2387, FP: 99, TN: 4737, FN: 2576
+
+
+======================================================================
+PERFORMANCE BY TYPE
+======================================================================
+
+Type: aggregation_injection
+  Total:     251
+  Accuracy:  0.4542
+  Precision: 1.0000
+  Recall:    0.4542
+  F1 Score:  0.6247
+  TPR: 0.4542, FPR: 0.0000, FNR: 0.5458
+  TP: 114, FP: 0, TN: 0, FN: 137
+
+Type: aggregation_query
+  Total:     317
+  Accuracy:  1.0000
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.0000, FNR: 0.0000
+  TP: 0, FP: 0, TN: 317, FN: 0
+
+Type: array_injection
+  Total:     392
+  Accuracy:  0.3036
+  Precision: 1.0000
+  Recall:    0.3036
+  F1 Score:  0.4658
+  TPR: 0.3036, FPR: 0.0000, FNR: 0.6964
+  TP: 119, FP: 0, TN: 0, FN: 273
+
+Type: comment_injection
+  Total:     242
+  Accuracy:  0.9628
+  Precision: 1.0000
+  Recall:    0.9628
+  F1 Score:  0.9811
+  TPR: 0.9628, FPR: 0.0000, FNR: 0.0372
+  TP: 233, FP: 0, TN: 0, FN: 9
+
+Type: count_query
+  Total:     407
+  Accuracy:  1.0000
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.0000, FNR: 0.0000
+  TP: 0, FP: 0, TN: 407, FN: 0
+
+Type: delete_query
+  Total:     94
+  Accuracy:  1.0000
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.0000, FNR: 0.0000
+  TP: 0, FP: 0, TN: 94, FN: 0
+
+Type: distinct_query
+  Total:     250
+  Accuracy:  1.0000
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.0000, FNR: 0.0000
+  TP: 0, FP: 0, TN: 250, FN: 0
+
+Type: find_with_limit
+  Total:     775
+  Accuracy:  1.0000
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.0000, FNR: 0.0000
+  TP: 0, FP: 0, TN: 775, FN: 0
+
+Type: find_with_projection
+  Total:     679
+  Accuracy:  0.9941
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.0059, FNR: 0.0000
+  TP: 0, FP: 4, TN: 675, FN: 0
+
+Type: find_with_sort
+  Total:     703
+  Accuracy:  0.9943
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.0057, FNR: 0.0000
+  TP: 0, FP: 4, TN: 699, FN: 0
+
+Type: insert_query
+  Total:     155
+  Accuracy:  0.8903
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.1097, FNR: 0.0000
+  TP: 0, FP: 17, TN: 138, FN: 0
+
+Type: json_injection
+  Total:     490
+  Accuracy:  0.5735
+  Precision: 1.0000
+  Recall:    0.5735
+  F1 Score:  0.7289
+  TPR: 0.5735, FPR: 0.0000, FNR: 0.4265
+  TP: 281, FP: 0, TN: 0, FN: 209
+
+Type: mapreduce_injection
+  Total:     102
+  Accuracy:  0.8529
+  Precision: 1.0000
+  Recall:    0.8529
+  F1 Score:  0.9206
+  TPR: 0.8529, FPR: 0.0000, FNR: 0.1471
+  TP: 87, FP: 0, TN: 0, FN: 15
+
+Type: operator_injection
+  Total:     1188
+  Accuracy:  0.1860
+  Precision: 1.0000
+  Recall:    0.1860
+  F1 Score:  0.3137
+  TPR: 0.1860, FPR: 0.0000, FNR: 0.8140
+  TP: 221, FP: 0, TN: 0, FN: 967
+
+Type: or_injection
+  Total:     779
+  Accuracy:  0.3748
+  Precision: 1.0000
+  Recall:    0.3748
+  F1 Score:  0.5453
+  TPR: 0.3748, FPR: 0.0000, FNR: 0.6252
+  TP: 292, FP: 0, TN: 0, FN: 487
+
+Type: regex_injection
+  Total:     537
+  Accuracy:  0.5642
+  Precision: 1.0000
+  Recall:    0.5642
+  F1 Score:  0.7214
+  TPR: 0.5642, FPR: 0.0000, FNR: 0.4358
+  TP: 303, FP: 0, TN: 0, FN: 234
+
+Type: simple_find
+  Total:     1215
+  Accuracy:  0.9473
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.0527, FNR: 0.0000
+  TP: 0, FP: 64, TN: 1151, FN: 0
+
+Type: type_confusion
+  Total:     263
+  Accuracy:  0.3232
+  Precision: 1.0000
+  Recall:    0.3232
+  F1 Score:  0.4885
+  TPR: 0.3232, FPR: 0.0000, FNR: 0.6768
+  TP: 85, FP: 0, TN: 0, FN: 178
+
+Type: update_query
+  Total:     241
+  Accuracy:  0.9585
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+  TPR: 0.0000, FPR: 0.0415, FNR: 0.0000
+  TP: 0, FP: 10, TN: 231, FN: 0
+
+Type: where_injection
+  Total:     719
+  Accuracy:  0.9068
+  Precision: 1.0000
+  Recall:    0.9068
+  F1 Score:  0.9511
+  TPR: 0.9068, FPR: 0.0000, FNR: 0.0932
+  TP: 652, FP: 0, TN: 0, FN: 67
+
